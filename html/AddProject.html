@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar/Editar Proyectos - Bronkitix</title>
+    <!-- Estilos principales y de la sección de agregar/editar proyectos -->
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/AddProject.css">
+    <!-- Estilos internos para el login -->
+    <style>
+      .login-container { max-width: 400px; margin: 80px auto; background: #222b3a; border-radius: 12px; padding: 32px 24px; box-shadow: 0 8px 32px 0 rgba(38,208,206,0.15); color: #fff; text-align: center; }
+      .login-container input { padding: 10px; border-radius: 8px; border: 1px solid #26d0ce; font-size: 1rem; margin-bottom: 16px; width: 80%; }
+      .login-container button { padding: 10px 24px; border-radius: 8px; border: none; background: linear-gradient(90deg, #26d0ce, #1a2980); color: #fff; font-weight: bold; cursor: pointer; transition: background 0.3s; }
+      .login-container button:hover { background: linear-gradient(90deg, #1a2980, #26d0ce); }
+      .login-error { color: #ff4d4d; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <!-- Formulario de login para acceder al panel de administración -->
+    <div id="login" class="login-container">
+      <h2>Iniciar sesión</h2>
+      <div id="loginError" class="login-error" style="display:none;"></div>
+      <input type="password" id="passwordInput" placeholder="Contraseña" />
+      <br>
+      <button onclick="login()">Entrar</button>
+    </div>
+    <!-- Panel de administración para agregar o editar proyectos -->
+    <div id="adminPanel" style="display:none;">
+      <div class="projects-container">
+          <h1>Agregar o Editar Proyectos</h1>
+          <form id="projectForm" class="project-form">
+              <input type="hidden" id="editIndex">
+              <input type="text" id="title" placeholder="Título del proyecto" required>
+              <input type="url" id="link" placeholder="Enlace del proyecto" required>
+              <input type="url" id="image" placeholder="URL de la imagen" required>
+              <button type="submit">Guardar Proyecto</button>
+              <button type="button" id="cancelEdit" style="display:none;">Cancelar edición</button>
+          </form>
+          <div id="projectsList" class="projects-list"></div>
+      </div>
+    </div>
+    <!-- Script de login y panel de administración -->
+    <script src="../javascript/addproject.js"></script>
+</body>
+</html>

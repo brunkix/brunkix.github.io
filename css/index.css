@@ -1,0 +1,174 @@
+.button-container {
+  position:fixed;
+  left: 0;
+  right: 0;
+  bottom: 80px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Estilos para el botón principal de la página */
+/* Botón de inicio */
+.button {
+  font-family: Inter, sans-serif;
+  cursor: pointer;
+  background: transparent;
+  color: #ffffff;
+  border: none;
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 100px;
+  transition: all 0.5s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 2px solid #fff;
+}
+
+/* Efecto hover para el botón */
+.button:hover {
+  scale: 1.1;
+  border: 2px solid #fff;
+}
+
+/* Efecto hover para el ícono del botón */
+.button:hover .icon {
+  fill: #ffff00;
+  scale: 1.1;
+  rotate: 360deg;
+  filter: drop-shadow(0 0 5px rgba(255, 208, 0, 0.8))
+    drop-shadow(0 0 10px rgba(255, 208, 0, 0.6));
+}
+
+/* Efecto hover para el texto del botón */
+.button:hover .text {
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2))
+    drop-shadow(0 0 10px rgba(255, 255, 255, 0.4));
+}
+
+/* Estilo para el texto del botón */
+.text {
+  transition: all 1s ease;
+}
+
+/* Estilo para el ícono SVG del botón */
+.icon {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin-top: -3px;
+  transition: all 1s ease;
+}
+
+
+/* Pie de página */
+footer {
+  background: transparent;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 20px 0;
+  width: 100%;
+  position: fixed; /* fijo */
+  bottom: 0;
+  left: 0;
+}
+
+/* Estilos generales del body y fondo animado */
+body {
+  background: linear-gradient(135deg, #03010c 0%, #1a2980 50%, #26d0ce 100%);
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Poppins', Inter, sans-serif;
+  animation: bg-move 10s ease-in-out infinite alternate;
+}
+
+/* Contenedor de bienvenida en la página principal */
+.welcome-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+}
+
+/* Título principal de la página */
+.main-title {
+  font-size: 3.5rem;
+  color: #fff;
+  letter-spacing: 2px;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 4px 32px #00aaff44, 0 1px 0 #222;
+}
+
+
+/* Subtítulo animado con efecto máquina de escribir */
+.subtitle {
+  font-size: 2rem;
+  color: #88c8ff;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  min-height: 2.5rem;
+  letter-spacing: 2px;
+  white-space: pre;
+  overflow: hidden;
+  border-right: 2px solid #88c8ff;
+  box-sizing: border-box;
+  background: linear-gradient(90deg, #88c8ff 0%, #fff 50%, #88c8ff 100%);
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: blink-caret 0.8s steps(1) infinite;
+}
+
+/* Contenedor del botón de inicio */
+.button-container {
+  position: static;
+  display: flex;
+  justify-content: center;
+}
+
+/* Keyframes al final del archivo */
+/* Animación de fondo en movimiento */
+@keyframes bg-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Animación del cursor parpadeante en el subtítulo */
+@keyframes blink-caret {
+  0%, 100% { border-color: #88c8ff; }
+  50% { border-color: transparent; }
+}
+
+/* Animación de aparición/desaparición (no usada actualmente) */
+@keyframes fade-slide {
+  0% {
+    opacity: 0;
+    background-position: 0% 100%;
+    transform: translateX(-40px);
+  }
+  20% {
+    opacity: 1;
+    background-position: 100% 100%;
+    transform: translateX(0);
+  }
+  80% {
+    opacity: 1;
+    background-position: 0% 100%;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    background-position: 100% 100%;
+    transform: translateX(40px);
+  }
+}
