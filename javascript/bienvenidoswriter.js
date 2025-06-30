@@ -1,34 +1,34 @@
-// Animación de máquina de escribir para el subtítulo "Bienvenidos"
-// Escribe y borra el texto de forma animada en el elemento con id "Bienvenidoswriter"
-const text = "Bienvenidos";
-const el = document.getElementById("Bienvenidoswriter");
-let i = 0;
+const element = document.getElementById("Bienvenidoswriter");
+const texts = ["Bienvenido", "Welcome", "Bienvenue", "Bem-vindo", "Willkommen", "Добро пожаловать"];
+let textIndex = 0;
+let charIndex = 0;
 let isDeleting = false;
-let speed = 120;
+let typingSpeed = 120;
+let pause = 1200;
 
-// Función principal de la animación
 function type() {
-  if (!isDeleting) {
-    // Escribe letra por letra
-    el.textContent = text.substring(0, i + 1);
-    i++;
-    if (i === text.length) {
-      // Espera antes de empezar a borrar
-      setTimeout(() => { isDeleting = true; type(); }, 1200);
-      return;
+  const currentText = texts[textIndex];
+  if (isDeleting) {
+    let text = currentText.substring(0, charIndex--);
+
+    // Si está vacío, pon un espacio para que el cursor no se despegue
+    element.textContent = text === "" ? " " : text;
+    if (charIndex < 0) {
+      isDeleting = false;
+      textIndex = (textIndex + 1) % texts.length;
+      setTimeout(type, 400);
+    } else {
+      setTimeout(type, typingSpeed / 2);
     }
   } else {
-    // Borra letra por letra
-    el.textContent = text.substring(0, i - 1);
-    i--;
-    if (i === 0) {
-      // Espera antes de volver a escribir
-      isDeleting = false;
-      setTimeout(type, 600);
-      return;
+    element.textContent = currentText.substring(0, charIndex++);
+    if (charIndex > currentText.length) {
+      isDeleting = true;
+      setTimeout(type, pause);
+    } else {
+      setTimeout(type, typingSpeed);
     }
   }
-  setTimeout(type, isDeleting ? 60 : speed);
 }
-// Inicia la animación
-type();
+
+setTimeout(type, typingSpeed);
