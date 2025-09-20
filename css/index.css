@@ -87,7 +87,7 @@
 
 /* Efecto hover para el ícono del botón */
 .button:hover .icon {
-  fill: #ffff00;
+  fill: #ffd900;
   scale: 1.1;
   rotate: 360deg;
   filter: drop-shadow(0 0 5px rgba(255, 208, 0, 0.8))
@@ -129,7 +129,7 @@ footer {
 
 /* Estilos generales del body y fondo animado */
 body {
-  background: linear-gradient(135deg, #03010c 0%, #1a2980 50%, #26d0ce 100%);
+  background: linear-gradient(270deg, #03010c, #191a1d, #232525);
   min-height: 100vh;
   margin: 0;
   font-family: 'Poppins', Inter, sans-serif;
@@ -154,23 +154,22 @@ body {
   letter-spacing: 2px;
   font-weight: 800;
   margin-bottom: 0.5rem;
-  text-shadow: 0 4px 32px #00aaff44, 0 1px 0 #222;
+  text-shadow: 0 4px 33px #ffffff44, 0 1px 0 #222;
 }
 
 
 /* Subtítulo animado con efecto máquina de escribir */
 .subtitle {
   font-size: 2rem;
-  color: #88c8ff;
+  color: #fff;
   font-weight: 600;
   margin-bottom: 2rem;
   min-height: 2.5rem;
   letter-spacing: 2px;
   white-space: pre;
   overflow: hidden;
-  border-right: 2px solid #88c8ff;
   box-sizing: border-box;
-  background: linear-gradient(90deg, #88c8ff 0%, #fff 50%, #88c8ff 100%);
+  background: linear-gradient(90deg, #ff8903 0%, #fffb03 50%);
   background-size: 200% 100%;
   background-clip: text;
   -webkit-background-clip: text;
