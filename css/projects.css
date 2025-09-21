@@ -1,0 +1,152 @@
+/* 🌌 Fondo general */
+body {
+  background: linear-gradient(270deg, #03010c, #191a1d, #232525);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', Inter, Arial, sans-serif;
+  animation: bg-move 10s ease-in-out infinite alternate;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Navbar general */
+.navbar {
+  width: 100%;
+  background-color: #111;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+/* Logo */
+.navbar .logo img {
+  height: 50px; /* Ajusta según tu diseño */
+  cursor: pointer;
+  border-radius: 15px;
+  transition: transform 0.2s ease;
+}
+
+.navbar .logo img:hover {
+  transform: scale(1.05);
+}
+
+/* Lista de enlaces */
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar .nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.navbar .nav-links li a:hover {
+  color: #ff6600;
+}  /*SOLUCIONAR XXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+
+
+/* 📦 Contenedor principal */
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  width: 100%;
+  padding: 20px;
+  position: fixed
+  ;
+}
+
+/* 🪪 Tarjetas de proyecto */
+.project {
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+/* 🖼 Imagen de proyecto */
+.project img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;     /* ✅ mantiene la escala de todas las imágenes */
+  border-radius: 15px;
+  border: 4px solid #ff5e00;
+  background: #fff;      /* ✅ fondo si la imagen no llena el espacio */
+}
+
+/* 🔖 Título */
+.project h2 {
+  margin: 10px 0;
+  color: #333;
+}
+
+/* 📝 Descripción */
+.project p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* 🔘 Botones */
+.square-button {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.square-button a {
+  display: inline-block;
+  padding: 10px 15px;
+  background: #ff6600;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.square-button a:hover {
+  background: #6200b3;
+  transform: scale(1.05);
+}
+
+/* 🖼 Lightbox */
+.lightbox {
+  display: none; /* Oculto por defecto */
+  position: fixed;
+  inset: 0; /* ✅ equivale a top:0; left:0; width:100%; height:100% */
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
