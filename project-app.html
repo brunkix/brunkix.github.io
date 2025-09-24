@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyectos - Brunkixz</title>
+  <link rel="stylesheet" href="/css/project-app.css">
+</head>
+<body>
+  <!-- Navbar semántica -->
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo" aria-label="Inicio">
+        <img src="/img/img.png" alt="Brunkix Logo">
+      </a>
+      <button class="nav-toggle" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="/projects.html">Proyectos</a></li>
+        <li><a href="/about.html">Sobre mí</a></li>
+        <li><a href="/contact.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="projects-container">
+
+    </section>
+
+      <!-- Formulario para agregar proyectos -->
+    <section class="add-project">
+      <h2>Agregar Nuevo Proyecto</h2>
+      <form id="project-form">
+        <input type="text" name="titulo" placeholder="Título del proyecto" required>
+        <input type="text" name="imagen" placeholder="URL de la imagen" required>
+        <input type="text" name="github" placeholder="URL de GitHub" required>
+        <input type="text" name="demo" placeholder="URL de Demo (opcional)">
+        <textarea name="descripcion" placeholder="Descripción del proyecto"></textarea>
+        <button type="submit">Agregar Proyecto</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <img src="" alt="Imagen Ampliada">
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Brunkixz. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="/javascript/fullscreen-img.js"></script>
+  <script src="/javascript/project-app.js"></script>
+  <script>
+    // Navbar responsive toggle
+    document.querySelector('.nav-toggle').onclick = function() {
+      document.querySelector('.nav-links').classList.toggle('open');
+    };
+  </script>
+</body>
+</html>
